@@ -42,7 +42,7 @@ const Tabs = () => {
                     case 'Search':
                         return(
                             <Image
-                            source={icons.menu_icon}
+                            source={icons.search_icon}
                             resizeMode='contain'
                             style={{
                                 tintColor: tintColor,
@@ -63,10 +63,10 @@ const Tabs = () => {
                                 }}
                                 />
                         )
-                    case 'Notifications':
+                    case 'Settings':
                         return(
                         <Image
-                            source={icons.notification_icon}
+                            source={icons.menu_icon}
                             resizeMode='contain'
                             style={{
                             tintColor: tintColor,
@@ -83,7 +83,18 @@ const Tabs = () => {
             name="Home"
             component={Home}
             />
-           
+             <Tab.Screen
+            name="Search"
+            component={Home}
+            />
+               <Tab.Screen
+            name="Notifications"
+            component={Home}
+            />
+               <Tab.Screen
+            name="Settings"
+            component={Home}
+            />
         </Tab.Navigator>
     );
 };
