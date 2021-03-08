@@ -118,8 +118,10 @@ const Home = () => {
         )
     }
 
-    const renderMyBooksSection = (books) => {
-
+    const renderMyBooksSection = (myBooks) => {
+        return(
+            <View style={{flex: 1}}></View>
+        )
     }
 
     return (
