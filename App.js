@@ -31,7 +31,9 @@ const App = () => {
       <Stack.Screen name="Home" component={Tabs} />
 
       {/*Screens */}
-      <Stack.Screen name="BookDetail" component={BookDetails} options={{ headerShown: false }}/>
+      <Stack.Screen name="BookDetail" 
+      component={BookDetails} 
+      options={{ headerShown: false }}/>
 
     </Stack.Navigator>
   </NavigationContainer>

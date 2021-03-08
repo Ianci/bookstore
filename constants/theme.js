@@ -48,18 +48,51 @@ export const SIZES = {
     height
 };
 
+export const SHADOWS = {
+    generic: {  
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 6
+    },
+    bold: {
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.60,
+        shadowRadius: 4.95,
+        elevation: 9
+    },
+    little: {  
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2.5,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 3
+    },
+}
+
 export const FONTS = {
     largeTitle: { fontFamily: "Roboto-regular", fontSize: SIZES.largeTitle, lineHeight: 55 },
-    h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
-    h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-    h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22 },
-    h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22 },
+    h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36, fontWeight: 'bold' },
+    h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30, fontWeight: 'bold' },
+    h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22, },
+    h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22, },
     body1: { fontFamily: "Roboto-Regular", fontSize: SIZES.body1, lineHeight: 36 },
     body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: 30 },
     body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
     body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
 };
 
-const appTheme = { COLORS, SIZES, FONTS };
+const appTheme = { COLORS, SIZES, FONTS, SHADOWS };
 
 export default appTheme;
