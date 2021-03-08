@@ -1,12 +1,15 @@
 import React, { useState} from 'react'
 
-import { View, Text, SafeAreaView, Image, TouchableOpacity, Touchable, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, Image, TouchableOpacity, Touchable, FlatList, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { booksArray } from '../data/BookData';
+import { booksArray, booksRecomended } from '../data/BookData';
 import {COLORS, FONTS, SIZES, icons, images, SHADOWS } from '../constants'
-const Home = () => {
+const Home = ({navigation}) => {
     
     const [ myBooks, setMyBooks ] = useState(booksArray)
+    const [ bookList, setBookList ] = useState(booksRecomended)
+
+
     const renderHeader = (profile) => {
         return(
             <>
@@ -118,9 +121,70 @@ const Home = () => {
         )
     }
 
+    const renderItem = ({ item, index }) => {
+        return(
+            <TouchableOpacity style={{flex: 1,
+            marginLeft: index === 0 ? SIZES.padding : 0,
+            marginRight: SIZES.base
+            }}
+            onPress={() => navigation.navigate('BookDetail'), {book: item}}
+            >
+                {/*Tapa libro*/}
+                <View>
+                    <Image 
+                    resizeMode='contain'
+                    source={item.bookCover} 
+                    style={{width: 150, height: 250, borderRadius: SIZES.radius}} />
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
     const renderMyBooksSection = (myBooks) => {
         return(
-            <View style={{flex: 1}}></View>
+          
+            <View style={{flex: 1}}>
+                 {/*Header*/}
+                <View style={{paddingHorizontal: SIZES.padding, flexDirection: 'row', justifyContent: 'space-between', marginTop: SIZES.base}}>
+                    <Text style={{...FONTS.body2, color: COLORS.white}}>Recomendados para vos</Text>
+                    <TouchableOpacity style={{marginTop: SIZES.base}}>
+                        <Text style={{...FONTS.body3, color: COLORS.lightGray, textDecorationLine: 'underline'}}>Ver más...</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/*Books*/}
+                <View style={{flex: 1, marginTop: SIZES.padding}}>
+                    <FlatList 
+                    horizontal
+                    contentContainerStyle={{marginTop: SIZES.base}}
+                    showsHorizontalScrollIndicator={false}
+                    data={myBooks}
+                    keyExtractor={item => item.id.toString()}
+                    renderItem={renderItem}/>
+                </View>
+            </View>
+        )
+    }
+
+    const renderCategoriesItem = (bookList) => {
+        const renderItem = ({ item }) => {
+
+        }
+        return(
+            <View style={{flex: 1, paddingLeft: SIZES.padding}}>
+                <View>
+                    <Text>Best Seller</Text>
+                    <Text>Novedades</Text>
+                    <Text>Próximamente</Text>
+                </View>
+                <FlatList
+                data={bookList}
+                showsHorizontalScrollIndicator={false}
+                renderItem={renderItem}
+                horizontal
+                keyExtractor={item => item.id.toString()}
+                />
+            </View>
         )
     }
 
@@ -142,8 +206,8 @@ const Home = () => {
                 {renderMyBooksSection(myBooks)}
                 </View>
                 {/*Category section*/}
-                <View>
-
+                <View style={{marginTop: SIZES.padding}}>
+                    {renderCategoriesItem(bookList)}
                 </View>
 
             </ScrollView>

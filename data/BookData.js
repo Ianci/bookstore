@@ -54,3 +54,45 @@ export const booksArray = [
         navTintColor: '#FFF'
     }
 ]
+
+
+export const booksRecomended = [ {
+    id: 1,
+    bookName: 'Crímenes sorprendetes en el Vaticano',
+    bookCover: images.crimenes,
+    rating: 4,
+    language: 'Esp',
+    author: 'Canaletti Ricardo',
+    pages: '384',
+    genre: ['Investigación', 'Periodismo'],
+    description: 'Desde el emperador Constantino hasta el papa Francisco, la Iglesia católica ocultó asesinatos, estafas y sucesos desopilantes. En este libro, Ricardo Canaletti reconstruye los hechos y los narra con el estilo inconfundible y la pasión que lo convirtieron en el periodista de casos criminales más leído de la Argentina. Canaletti esta vez recorre Alejandría, Constantinopla, Cirene, Atenas, Lombardía y Roma; consigue fuentes, archivos históricos y se remonta a la Antig ¼edad, pero también se mete con escándalos contemporáneos. A la filósofa Hipatia, una mujer culta e independiente, la lincharon los fanáticos instigados por el poder eclesiástico. Otra mujer se sentó en el trono de Pedro y años después parió en plena procesión. Hubo un papa al que llamaban "Satanás" y otro que había sido pirata. Durante la "pornocracia", los asuntos se resolvían con favores sexuales. Los papas eran padres de papas. Se torturó hasta la muerte para no pagar deudas. Un sumo pontífice estranguló a otro, y hubo uno más que llevó a juicio al cadáver de su antecesor. En estas páginas están los "banquetes de las castañas" que organizaba el papa Borgia. Asoman Maquiavelo, Leonardo da Vinci, Giordano Bruno. Y se busca saber qué hay detrás de la repentina y jamás investigada muerte de Juan Pablo I, que se había enfrentado a la masonería y a la corrupción demostrada con la caída del Banco Ambrosiano; y también de la desaparición -aún impune- de la jovencita Emanuela Orlandi, que une el atentado de Juan Pablo II con los servicios de inteligencia y las tumbas compradas por la delincuencia. Crímenes sorprendentes en el Vaticano demuestra en cada caso que al demonio le sientan muy bien los lugares sagrados.',
+    backgroundColor: 'rgba(119,77,143, 0.9)',
+    navTintColor: '#FFF'
+},
+{
+    id: 2,
+    bookName: 'Confianza Ciega',
+    bookCover: images.confianza,
+    rating: 4.5,
+    language: 'Esp',
+    author: 'John Katzenbach',
+    pages: '384',
+    genre: ['Ficción', 'Policiales', 'Narrativa'],
+    description: 'Desde el emperador Constantino hasta el papa Francisco, la Iglesia católica ocultó asesinatos, estafas y sucesos desopilantes. En este libro, Ricardo Canaletti reconstruye los hechos y los narra con el estilo inconfundible y la pasión que lo convirtieron en el periodista de casos criminales más leído de la Argentina. Canaletti esta vez recorre Alejandría, Constantinopla, Cirene, Atenas, Lombardía y Roma; consigue fuentes, archivos históricos y se remonta a la Antig ¼edad, pero también se mete con escándalos contemporáneos. A la filósofa Hipatia, una mujer culta e independiente, la lincharon los fanáticos instigados por el poder eclesiástico. Otra mujer se sentó en el trono de Pedro y años después parió en plena procesión. Hubo un papa al que llamaban "Satanás" y otro que había sido pirata. Durante la "pornocracia", los asuntos se resolvían con favores sexuales. Los papas eran padres de papas. Se torturó hasta la muerte para no pagar deudas. Un sumo pontífice estranguló a otro, y hubo uno más que llevó a juicio al cadáver de su antecesor. En estas páginas están los "banquetes de las castañas" que organizaba el papa Borgia. Asoman Maquiavelo, Leonardo da Vinci, Giordano Bruno. Y se busca saber qué hay detrás de la repentina y jamás investigada muerte de Juan Pablo I, que se había enfrentado a la masonería y a la corrupción demostrada con la caída del Banco Ambrosiano; y también de la desaparición -aún impune- de la jovencita Emanuela Orlandi, que une el atentado de Juan Pablo II con los servicios de inteligencia y las tumbas compradas por la delincuencia. Crímenes sorprendentes en el Vaticano demuestra en cada caso que al demonio le sientan muy bien los lugares sagrados.',
+    backgroundColor: 'rgba(119,77,143, 0.9)',
+    navTintColor: '#FFF'
+},
+{
+    id: 3,
+    bookName: '21 lecciones para el siglo XXI',
+    bookCover: images.lecciones,
+    rating: 4.7,
+    language: 'Esp',
+    author: 'Yuval Noah Harari',
+    pages: '408',
+    genre: ['Historia', 'Sociedad', 'Humanidades'],
+    description: 'Con la misma prosa inteligente, fresca y provocativa, en su nuevo título, 21 lecciones para el siglo XXI, Harari examina algunas de las cuestiones más urgentes de nuestro presente y ofrece una reflexión sobre el sentido de la vida hoy en día. El hilo conductor de este estimulante libro se centra en el desafío de mantener nuestro enfoque colectivo e individual frente al constante y desorientador cambio que estamos viviendo. ¿Somos capaces aún de entender el mundo que hemos creado?',
+    backgroundColor: 'rgba(119,77,143, 0.9)',
+    navTintColor: '#FFF'
+},
+]
