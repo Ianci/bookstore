@@ -127,7 +127,7 @@ const Home = ({navigation}) => {
             marginLeft: index === 0 ? SIZES.padding : 0,
             marginRight: SIZES.base
             }}
-            onPress={() => navigation.navigate('BookDetail'), {book: item}}
+            onPress={() => navigation.navigate('BookDetail', {book: item})}
             >
                 {/*Tapa libro*/}
                 <View>
@@ -168,22 +168,78 @@ const Home = ({navigation}) => {
 
     const renderCategoriesItem = (bookList) => {
         const renderItem = ({ item }) => {
+            return(
+                <ScrollView style={{ marginTop: SIZES.base, flex: 1}}> 
+                <TouchableOpacity style={{flex: 1, flexDirection: 'row'}}>
+                    <View>
+                        <Image source={item.bookCover}
+                        resizeMode='contain'
+                        style={{width: 100, height: 180, flex: 1, borderRadius: SIZES.base}}
+                        />
+                    </View>
+                        <View style={{flex: 1 , marginTop: SIZES.radius, marginHorizontal: SIZES.base}}>
+                                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
 
+                                <Text style={{...FONTS.body3, color: COLORS.white, fontWeight: '300'}}>{item.bookName}</Text>
+                                <Image source={icons.bookmark_icon}
+                                resizeMode='contain'
+                                style={{height: 25, width: 25, tintColor: COLORS.lightGray, marginTop: SIZES.base}}
+                                />
+                                </View>
+
+
+                                <Text style={{...FONTS.body4, color: COLORS.lightGray4}}>{item.author}</Text>
+                            <View style={{flexDirection: 'row', marginTop: SIZES.base}}>
+                                <Image source={icons.page_filled_icon}
+                                resizeMode='contain'
+                                style={{width: 25, height: 25, tintColor: COLORS.lightGray}}
+                                />
+                                <Text style ={{...FONTS.body3, color: COLORS.lightGray4, marginLeft: SIZES.base}}>{item.pages} páginas</Text>
+                            </View>
+
+                            <View style={{flexDirection: 'row'}}>
+                                <Text style={{marginRight: SIZES.base, backgroundColor: COLORS.lightCoral, borderRadius: SIZES.radius, padding: 3, marginTop: SIZES.base, ...FONTS.body3}}>{item.genre[0]}</Text>
+                                <Text style={{marginRight: SIZES.base, backgroundColor: COLORS.lightCoral, borderRadius: SIZES.radius, padding: 3, marginTop: SIZES.base, ...FONTS.body3}}>{item.genre[1]}</Text>
+                                {item.genre.length === 3 &&
+                                <Text style={{marginRight: SIZES.base, backgroundColor: COLORS.lightCoral, borderRadius: SIZES.radius, padding: 3, marginTop: SIZES.base, ...FONTS.body3}}>{item.genre[2]}</Text>
+                                }
+                            </View>
+
+                            <View style={{marginVertical: SIZES.base}}
+                            >
+                                <TouchableOpacity 
+                                style={{backgroundColor: COLORS.pink, height: 25, width: 115, 
+                                justifyContent: 'center', alignItems: 'center', borderRadius: SIZES.radius}}
+                                onPress={() => navigation.navigate('BookDetail', {book: item})}
+                                >
+                                    <Text style={{...FONTS.body3, color: COLORS.white, fontWeight: 'bold'}}>Ver más</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                </TouchableOpacity>
+                </ScrollView>
+            )
         }
         return(
-            <View style={{flex: 1, paddingLeft: SIZES.padding}}>
-                <View>
-                    <Text>Best Seller</Text>
-                    <Text>Novedades</Text>
-                    <Text>Próximamente</Text>
+            <View style={{paddingLeft: SIZES.padding}}>
+                <View style={{justifyContent: 'space-around', flexDirection: 'row'}}>
+                   
+                        <Text style={{...FONTS.body3, color: COLORS.white, fontWeight: 'bold'}}>Best Seller</Text>
+                 
+                        <Text style={{...FONTS.body3, color: COLORS.lightGray, fontWeight: 'bold'}}>Novedades</Text>
+                   
+                        <Text style={{...FONTS.body3, color: COLORS.lightGray, fontWeight: 'bold'}}>Próximamente</Text>
+                   
                 </View>
+               
                 <FlatList
                 data={bookList}
                 showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{marginTop: SIZES.base, marginBottom: SIZES.base}}
                 renderItem={renderItem}
-                horizontal
                 keyExtractor={item => item.id.toString()}
                 />
+                
             </View>
         )
     }
